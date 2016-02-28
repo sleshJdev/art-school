@@ -1,0 +1,104 @@
+/*
+    Buttons
+*/
+.button {
+  border: none;
+  text-transform: uppercase;
+  padding: 10px 13px;
+  min-width: 100px;
+}
+.button:hover {
+  cursor: pointer;
+}
+.button--ok {
+  border: none;
+  text-transform: uppercase;
+  padding: 10px 13px;
+  min-width: 100px;
+  background-color: #71ff71;
+}
+.button--ok:hover {
+  cursor: pointer;
+}
+.button--ok:hover {
+  background-color: #3eff3e;
+}
+.button--warning {
+  border: none;
+  text-transform: uppercase;
+  padding: 10px 13px;
+  min-width: 100px;
+  background-color: #ffff71;
+}
+.button--warning:hover {
+  cursor: pointer;
+}
+.button--warning:hover {
+  background-color: #ffff3e;
+}
+/*
+News Form
+*/
+.form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 8px 10px;
+}
+.form__group,
+.form__control {
+  padding: 8px 10px;
+  margin: 8px 10px;
+}
+input.form__control,
+textarea.form__control {
+  width: 100%;
+  line-height: 1.5em;
+}
+input.form__control,
+textarea.form__control,
+button.form__control {
+  border: 1px solid #019eff;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  background-color: #fefefe;
+}
+.menu {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 66.66666667%;
+}
+.menu__item {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  margin: 1px 0;
+  background-color: #0e90d2;
+  border: none;
+}
+.menu__item:hover {
+  cursor: pointer;
+  background-color: #0b6fa2;
+}
+.menu__item--icon {
+  margin-right: 20px;
+  float: left;
+}
+.menu__item--image {
+  float: right;
+}
+.menu__item--content {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 1.1em;
+  color: #ffffff;
+}
+.menu__item--icon,
+.menu__item--image,
+.menu__item--content {
+  display: inline-block;
+}

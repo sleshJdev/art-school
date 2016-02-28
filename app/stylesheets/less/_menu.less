@@ -1,0 +1,42 @@
+.menu {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: @width--8;
+}
+
+.menu__item {
+  display: block;
+  width: @width--12;
+  padding: 8px 10px;
+  margin: 1px 0;
+  background-color: #0e90d2;
+  border: none;
+  &:hover {
+    cursor: pointer;
+    //background-color: #09d290;
+    background-color: darken(#0e90d2, 10%);
+
+  }
+}
+
+.menu__item--icon {
+  margin-right: 20px;
+  float: left;
+}
+
+.menu__item--image {
+  float: right;
+}
+
+.menu__item--content {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 1.1em;
+  color: #ffffff;
+}
+
+.menu__item--icon,
+.menu__item--image,
+.menu__item--content {
+  display: inline-block;
+}

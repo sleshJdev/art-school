@@ -1,0 +1,19 @@
+{
+  "name": "art-school",
+  "version": "1.0.0",
+  "description": "web app for art school",
+  "main": "index.js",
+  "author": "slesh",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "guid": "0.0.12",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.0.5"
+  }
+}

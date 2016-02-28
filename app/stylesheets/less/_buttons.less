@@ -1,0 +1,29 @@
+/*
+    Buttons
+*/
+
+.button {
+  border: none;
+  text-transform: uppercase;
+  padding: 10px 13px;
+  min-width: 100px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button--ok {
+  .button();
+  background-color: #71ff71;
+  &:hover {
+    background-color: darken(#71ff71, 10%);
+  }
+}
+
+.button--warning {
+  .button();
+  background-color: #ffff71;
+  &:hover {
+    background-color: darken(#ffff71, 10%);
+  }
+}
