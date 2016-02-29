@@ -9,33 +9,49 @@ module.exports = (function (guid, dispatcher) {
     var listeners = [];
     var databaseNews = [
         {
+            key: guid.create(),
             id: 1,
             title: "Новость 1",
+            date: "2016.02.17",
             content: "Очень много текстаОчень много текстаОчень много текстаОчень много текстаОчень много текстаОчень много текста"
         }, {
+            key: guid.create(),
             id: 2,
             title: "Новость 2",
+            date: "2016.02.17",
             content: "Очень много текстаОчень много текстаОчень много текстаОчень много текстаОчень много текстаОчень много текста"
         }, {
+            key: guid.create(),
             id: 3,
             title: "Новость 3",
+            date: "2016.02.17",
             content: "Очень много текстаОчень много текстаОчень много текстаОчень много текстаОчень много текстаОчень много текста"
         }, {
+            key: guid.create(),
             id: 4,
             title: "Новость 4",
+            date: "2016.02.17",
+            content: "Очень много текстаОчень много текстаОчень много текстаОчень много текстаОчень много текстаОчень много текста"
+        }, {
+            key: guid.create(),
+            id: 5,
+            title: "Новость 5",
+            date: "2016.02.17",
+            content: "Очень много текстаОчень много текстаОчень много текстаОчень много текстаОчень много текстаОчень много текста"
+        }, {
+            key: guid.create(),
+            id: 6,
+            title: "Новость 6",
+            date: "2016.02.17",
             content: "Очень много текстаОчень много текстаОчень много текстаОчень много текстаОчень много текстаОчень много текста"
         }
     ];
-
-    databaseNews.forEach(function (news) {
-        news.key = guid.create();
-    });
 
     function addNews(news) {
         news.key = guid.create();
         databaseNews.push(news);
         triggerListeners();
-        console.log("NewsStore.addNews(), news: " + JSON.stringify(news) + ", quantity: " + databaseNews.length);
+        console.log("NewsStore.addNews(), news: ", news, ", quantity: ", databaseNews.length);
     }
 
     function deleteNews(news) {

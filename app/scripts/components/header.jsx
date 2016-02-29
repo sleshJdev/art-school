@@ -3,11 +3,11 @@
  * @author slesh
  */
 
-module.exports = (function (React) {
+module.exports = (function (React, ReactDOM, ForStudents, NewsForm, NewsList, NewsStore) {
     var MenuItem = React.createClass({
         render: function () {
             return (
-                <div className="menu__item">
+                <div className="menu__item" onClick={this.props.onClick}>
                     <div className="menu__item--icon">ICON</div>
                     <div className="menu__item--content">{this.props.title}</div>
                     <div className="menu__item--image">ICON</div>
@@ -17,17 +17,26 @@ module.exports = (function (React) {
     });
 
     return React.createClass({
+        openNewsLink: function () {
+            ReactDOM.render(<NewsList newsList={NewsStore.getAllNews()}/>, document.querySelector("#container"));
+        },
+        openForStudentsLink: function () {
+            ReactDOM.render(<ForStudents/>, document.querySelector("#container"));
+        },
         render: function () {
             return (
                 <header>
                     <div className="menu">
-                        <MenuItem title="Главная"/>
-                        <MenuItem title="Новости"/>
-                        <MenuItem title="Поступающим"/>
+                        <MenuItem title="Новости" onClick={this.openNewsLink}/>
+                        <MenuItem title="Поступающим" onClick={this.openForStudentsLink}/>
                         <MenuItem title="Родителям"/>
                     </div>
                 </header>
             )
         }
     });
-})(require("react"));
+})(require("react"), require("react-dom"),
+    require("./for-students.jsx"),
+    require("./news-form.jsx"),
+    require("./news-list.jsx"),
+    require("../stores/news-store"));

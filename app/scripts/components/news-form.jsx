@@ -13,23 +13,21 @@ module.exports = (function (React, actions) {
         },
         addNews: function (e) {
             e.preventDefault();
-            actions.addNews(this.state);
+            actions.addNews({
+                title: this.state.title,
+                content: this.state.content
+            });
         },
         handleInputChange: function (e) {
             e.preventDefault();
-            var name = e.target.name;
-            var value = e.target.value;
-            var state = this.state;
-            state[name] = value;
-            this.setState(state);
+            this.state[e.target.name] = e.target.value;
         },
         render: function () {
             return (
                 <form className="form" onSubmit={this.addNews}>
                     <div className="form__group">
                         <label htmlFor="anchor-news-title">Title</label>
-                        <input type="text" id="anchor-news-title" className="form__control" name="title" value={this.state.title}
-                               onChange={this.handleInputChange}/>
+                        <input type="text" id="anchor-news-title" className="form__control" name="title" value={this.state.title} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form__group">
                         <label htmlFor="anchor-news-content">Content</label>

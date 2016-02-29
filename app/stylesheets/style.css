@@ -1,5 +1,13 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  background-color: #fefefe;
+}
 /*
-    Buttons
+Buttons
 */
 .button {
   border: none;
@@ -54,18 +62,53 @@ textarea.form__control {
   width: 100%;
   line-height: 1.5em;
 }
+input.form__control:focus,
+textarea.form__control:focus {
+  box-shadow: #39a5de 0 0 0 2px;
+}
 input.form__control,
 textarea.form__control,
 button.form__control {
-  border: 1px solid #019eff;
+  border: 1px solid #39a5de;
 }
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/*
+News Preview
+*/
+.news {
+  display: inline-block;
+  width: 50%;
 }
-body {
-  background-color: #fefefe;
+.news:hover {
+  border: -1px solid #2bbb5b;
+  cursor: pointer;
+  background-color: #eeeeee;
+  opacity: 0.5;
+}
+.news__header {
+  font-size: 1.3em;
+  color: #39a5de;
+  margin: 5px 3px 5px 10px;
+  text-align: left;
+}
+.news__body {
+  padding: 8px 10px;
+}
+.news__body img {
+  float: left;
+  margin: 10px 10px 10px 5px;
+}
+.news--date {
+  font-size: 0.6em;
+  font-style: italic;
+  font-weight: 500;
+  color: #000;
+  margin: 3px 5px;
+  float: right;
+}
+/*News List*/
+.news--list {
+  width: 66.66666667%;
+  margin: 50px auto;
 }
 .menu {
   display: block;
@@ -102,3 +145,7 @@ body {
 .menu__item--content {
   display: inline-block;
 }
+/*
+#39a5de
+#2bbb5b
+*/
