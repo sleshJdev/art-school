@@ -110,6 +110,10 @@ News Preview
   width: 66.66666667%;
   margin: 50px auto;
 }
+.news--list__panel {
+  margin: 10px 0;
+  padding: 10px 0;
+}
 .menu {
   display: block;
   margin-left: auto;

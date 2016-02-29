@@ -3,7 +3,7 @@
  * @author slesh
  */
 
-module.exports = (function (React, ReactDOM, ForStudents, NewsForm, NewsList, NewsStore) {
+module.exports = (function (React, ReactDOM, ForStudents, NewsList, NewsStore) {
     var MenuItem = React.createClass({
         render: function () {
             return (
@@ -37,6 +37,5 @@ module.exports = (function (React, ReactDOM, ForStudents, NewsForm, NewsList, Ne
     });
 })(require("react"), require("react-dom"),
     require("./for-students.jsx"),
-    require("./news-form.jsx"),
     require("./news-list.jsx"),
     require("../stores/news-store"));
