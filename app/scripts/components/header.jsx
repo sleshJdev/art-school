@@ -25,7 +25,7 @@ module.exports = (function (React, ReactDOM, ForStudents, NewsList, NewsStore) {
         },
         render: function () {
             return (
-                <header>
+                <header className="app__header">
                     <div className="menu">
                         <MenuItem title="Новости" onClick={this.openNewsLink}/>
                         <MenuItem title="Поступающим" onClick={this.openForStudentsLink}/>

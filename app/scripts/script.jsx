@@ -4,14 +4,16 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Header = require("./components/header.jsx");
-var Body = require("./components/body.jsx");
+var Container = require("./components/container.jsx");
+var Footer = require("./components/footer.jsx");
 
 var App = React.createClass({
     render: function () {
         return (
-            <div>
+            <div className="app">
                 <Header/>
-                <Body/>
+                <Container/>
+                <Footer>HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</Footer>
             </div>
         );
     }

@@ -30,8 +30,8 @@ module.exports = (function (React, ReactDOM, NewsForm) {
         render: function () {
             return (
                 <div>
-                    <div className="news--list">
-                        <div className="news--list__panel">
+                    <div>
+                        <div className="panel">
                             <button className="button--ok" onClick={this.openNewsForm}>Добавить новость</button>
                         </div>
                         <div>
