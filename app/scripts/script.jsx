@@ -13,7 +13,7 @@ var App = React.createClass({
             <div className="app">
                 <Header/>
                 <Container/>
-                <Footer>HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</Footer>
+                <Footer/>
             </div>
         );
     }
