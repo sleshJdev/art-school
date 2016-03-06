@@ -14,15 +14,12 @@ gulp.task("bundle", function () {
         debug: true
     }).transform("babelify", {
         presets: ["react"]
-    }).bundle()
-        .pipe(fs.createWriteStream("app/build/script.js"));
+    }).bundle().pipe(fs.createWriteStream("app/build/script.js"));
 });
 
 gulp.task("less", function () {
-    return gulp.src(["app/stylesheets/less/style.less"])
-        .pipe(less({
-            paths: "app/stylesheets/less"
-        }))
+    gulp.src(["app/stylesheets/less/style.less"])
+        .pipe(less({paths: "app/stylesheets/less"}))
         .pipe(gulp.dest("app/stylesheets"));
 });
 
