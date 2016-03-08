@@ -2,8 +2,20 @@
  * @author slesh
  */
 
-var http = require("http");
 
-http.createServer(function (req, res) {
-    req.end("Hello + ", req.getParameter("name"));
-}).listen(8080);
+var express = require("express");
+var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
+var path = require("path");
+
+var newsController = require("./controllers/news.controller.js");
+
+var app = express();
+app.use(express.static(path.join(__dirname, "../app/build")));
+app.use(bodyParser.json());
+app.use("/api", newsController);
+app.listen(9090, function () {
+    console.log("server is started");
+});
+
+mongoose.connect("mongodb://localhost/art-school");

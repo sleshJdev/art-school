@@ -6,16 +6,16 @@
   "author": "slesh",
   "license": "ISC",
   "dependencies": {
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "express": "^4.13.4",
+    "guid": "0.0.12",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.0.5",
     "mongoose": "^4.4.6",
+    "path": "^0.12.7",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "underscore": "^1.8.3"
-  },
-  "devDependencies": {
-    "babel-preset-react": "^6.5.0",
-    "babelify": "^7.2.0",
-    "guid": "0.0.12",
-    "gulp": "^3.9.1",
-    "gulp-less": "^3.0.5"
   }
 }
