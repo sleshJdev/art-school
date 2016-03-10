@@ -6,7 +6,6 @@
 
 module.exports = (function (React, ReactDOM, NewsStore, NewsActions, NewsList) {
     NewsStore.onChange(function (newsList) {
-        console.log(__filename, ", newsList: ", newsList);
         ReactDOM.render(<NewsList newsList={newsList}/>, document.querySelector("#container"));
     });
     return React.createClass({

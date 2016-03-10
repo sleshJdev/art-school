@@ -11,10 +11,6 @@ module.exports = (function (React, ReactDOM, NewsActions) {
                 content: null
             }
         },
-        handleInputChange: function (e) {
-            e.preventDefault();
-            this.state[e.target.name] = e.target.value;
-        },
         render: function () {
             return (
                 <form className="form" onSubmit={this.addNews}>
@@ -34,9 +30,14 @@ module.exports = (function (React, ReactDOM, NewsActions) {
                 </form>
             )
         },
+        handleInputChange: function (e) {
+            e.preventDefault();
+            this.state[e.target.name] = e.target.value;
+        },
         addNews: function (e) {
             e.preventDefault();
             var news = JSON.parse(JSON.stringify(this.state));
+            news.date = new Date();
             NewsActions.addNews(news);
         },
         cancel: function () {

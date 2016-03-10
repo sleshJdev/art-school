@@ -99,9 +99,20 @@ button.form__control {
 /*
 News Preview
 */
+.news--page .news:hover {
+  border: none;
+  cursor: default;
+  background-color: unset;
+  opacity: unset;
+}
+.news--page .news__header {
+  text-align: center;
+  font-size: 1.9em;
+  margin-bottom: 10px;
+}
 .news {
   display: inline-block;
-  width: 50%;
+  width: 100%;
 }
 .news:hover {
   border: -1px solid #2bbb5b;
@@ -115,10 +126,10 @@ News Preview
   margin: 5px 3px 5px 10px;
   text-align: left;
 }
-.news__body {
+.news__content {
   padding: 8px 10px;
 }
-.news__body img {
+.news__content img {
   float: left;
   margin: 10px 10px 10px 5px;
 }

@@ -16,7 +16,7 @@ News Form
 
 input.form__control,
 textarea.form__control {
-  width: 100%;
+  width: @width--12;
   line-height: 1.5em;
   &:focus {
     box-shadow: #39a5de 0 0 0 2px;
@@ -33,19 +33,29 @@ button.form__control {
 News Preview
 */
 
+.news--page {
+  .news:hover {
+    border: none;
+    cursor: default;
+    background-color: unset;
+    opacity: unset;
+  }
+  .news__header {
+    text-align: center;
+    font-size: 1.9em;
+    margin-bottom: 10px;
+  }
+}
+
 .news {
   display: inline-block;
-  width: @width--6;
+  width: @width--12;
   &:hover {
     border: -1px solid #2bbb5b;
     cursor: pointer;
     background-color: #eeeeee;
     opacity: 0.5;
   }
-}
-
-.news--content {
-
 }
 
 .news__header {
@@ -55,7 +65,7 @@ News Preview
   text-align: left;
 }
 
-.news__body {
+.news__content {
   padding: 8px 10px;
   img {
     float: left;
