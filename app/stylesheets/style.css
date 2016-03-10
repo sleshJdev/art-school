@@ -116,6 +116,9 @@ button.form__control {
 /*
 News Preview
 */
+.news--page .news {
+  overflow-y: visible;
+}
 .news--page .news:hover {
   border: none;
   cursor: default;
@@ -133,6 +136,8 @@ News Preview
 .news {
   display: inline-block;
   width: 100%;
+  height: 10em;
+  overflow-y: hidden;
 }
 .news:hover {
   border: -1px solid #2bbb5b;

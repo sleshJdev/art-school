@@ -38,6 +38,9 @@ News Preview
 */
 
 .news--page {
+  .news{
+    overflow-y: visible;
+  }
   .news:hover {
     border: none;
     cursor: default;
@@ -58,6 +61,8 @@ News Preview
 .news {
   display: inline-block;
   width: @width--12;
+  height: 10em;
+  overflow-y: hidden;
   &:hover {
     border: -1px solid #2bbb5b;
     cursor: pointer;
