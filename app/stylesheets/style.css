@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: none;
 }
 body {
   background-color: #fefefe;
@@ -69,6 +70,19 @@ Buttons
 .button--warning:hover {
   background-color: #ffff3e;
 }
+.button--danger {
+  border: none;
+  text-transform: uppercase;
+  padding: 10px 13px;
+  min-width: 100px;
+  background-color: #ff7171;
+}
+.button--danger:hover {
+  cursor: pointer;
+}
+.button--danger:hover {
+  background-color: #ff3e3e;
+}
 /*
 News Form
 */
@@ -96,6 +110,9 @@ textarea.form__control,
 button.form__control {
   border: 1px solid #39a5de;
 }
+button.form__control {
+  float: right;
+}
 /*
 News Preview
 */
@@ -109,6 +126,9 @@ News Preview
   text-align: center;
   font-size: 1.9em;
   margin-bottom: 10px;
+}
+.news--page__controls {
+  float: right;
 }
 .news {
   display: inline-block;

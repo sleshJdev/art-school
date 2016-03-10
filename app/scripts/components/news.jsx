@@ -2,7 +2,7 @@
  * @author slesh
  */
 
-module.exports = (function (React, ReactDOM) {
+module.exports = (function (React, ReactDOM, NewsActions) {
     var NewsPage = React.createClass({
         render: function () {
             return (
@@ -17,8 +17,14 @@ module.exports = (function (React, ReactDOM) {
                             {this.props.news.content}
                         </div>
                     </div>
+                    <div className="news--page__controls">
+                        <button className="button--danger" onClick={this.deleteNews}>Удалить</button>
+                    </div>
                 </div>
             )
+        },
+        deleteNews: function () {
+            NewsActions.deleteNews(this.props.news._id);
         }
     });
 
@@ -41,4 +47,4 @@ module.exports = (function (React, ReactDOM) {
             ReactDOM.render(<NewsPage news={this.props.news}/>, document.querySelector("#container"));
         }
     });
-})(require("react"), require("react-dom"));
+})(require("react"), require("react-dom"), require("news.actions"));
