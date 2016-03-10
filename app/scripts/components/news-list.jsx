@@ -14,7 +14,7 @@ module.exports = (function (React, ReactDOM, News, NewsForm) {
                     <div>
                         {
                             this.props.newsList.map(function (news) {
-                                return <News key={news.key} news={news}/>
+                                return <News key={news._id} news={news}/>
                             })
                         }
                     </div>

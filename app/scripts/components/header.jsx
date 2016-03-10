@@ -3,7 +3,7 @@
  * @author slesh
  */
 
-module.exports = (function (React, ReactDOM, NewsList, ForStudents, ForParents, NewsStore) {
+module.exports = (function (React, ReactDOM, NewsList, ForStudents, ForParents, NewsActions) {
     var MenuItem = React.createClass({
         render: function () {
             return (
@@ -29,7 +29,7 @@ module.exports = (function (React, ReactDOM, NewsList, ForStudents, ForParents, 
             )
         },
         openNewsLink: function () {
-            ReactDOM.render(<NewsList newsList={NewsStore.getAllNews()}/>, document.querySelector("#container"));
+            NewsActions.getNews();
         },
         openForStudentsLink: function () {
             ReactDOM.render(<ForStudents/>, document.querySelector("#container"));
@@ -40,4 +40,4 @@ module.exports = (function (React, ReactDOM, NewsList, ForStudents, ForParents, 
     });
 })(require("react"), require("react-dom"),
     require("./news-list.jsx"), require("./for-students.jsx"), require("./for-parents.jsx"),
-    require("news.store"));
+    require("news.actions"));

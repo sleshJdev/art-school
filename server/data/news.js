@@ -4,9 +4,9 @@
 
 var mongoose = require("mongoose");
 var newsSchema = mongoose.Schema({
-    name: String,
-    content: String,
-    date: String
+    date: String,
+    title: String,
+    content: String
 });
 
 module.exports = mongoose.model("news", newsSchema);

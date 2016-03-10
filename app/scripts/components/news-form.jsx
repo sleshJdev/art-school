@@ -25,8 +25,7 @@ module.exports = (function (React, ReactDOM, NewsActions) {
                     </div>
                     <div className="form__group">
                         <label htmlFor="anchor-news-content">Content</label>
-                        <textarea id="anchor-news-content" className="form__control" name="content"
-                                  value={this.state.content} onChange={this.handleInputChange}/>
+                        <textarea id="anchor-news-content" className="form__control" name="content" value={this.state.content} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form__group">
                         <button type="submit" className="form__control button--ok" onClick={this.addNews}>Save</button>
@@ -37,10 +36,11 @@ module.exports = (function (React, ReactDOM, NewsActions) {
         },
         addNews: function (e) {
             e.preventDefault();
-            NewsActions.addNews(JSON.parse(JSON.stringify(this.state)));
+            var news = JSON.parse(JSON.stringify(this.state));
+            NewsActions.addNews(news);
         },
         cancel: function () {
             //this.props.onCancel(this.state);
         }
     });
-})(require("react"), require("react-dom"), require("news.actions.js"));
+})(require("react"), require("react-dom"), require("news.actions"));
