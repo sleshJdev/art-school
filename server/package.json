@@ -1,0 +1,22 @@
+{
+  "name": "art-school",
+  "version": "1.0.0",
+  "description": "web app for art school",
+  "author": "slesh",
+  "license": "ISC",
+  "scripts": {
+    "fe-build": ""
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.4.6"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.2",
+    "gulp-connect": "^5.0.0",
+    "lodash": "^4.17.4",
+    "morgan": "^1.8.2",
+    "nconf": "^0.8.4",
+    "winston": "^2.3.1"
+  }
+}

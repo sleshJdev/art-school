@@ -1,7 +1,6 @@
-/**
- * News Store
- * @author slesh
- */
+import newsService from '../service/news.service';
+import dispatcher from '../core/'
+import guid from 'guid';
 
 module.exports = (function (NewsService, Guid, Dispatcher, NewsConstants) {
     var listeners = [];
