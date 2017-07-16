@@ -1,28 +1,31 @@
-/**
- * News List
- * @author slesh
- */
+import React from 'react';
+import ReactDom from 'react-dom';
 
-module.exports = (function (React, ReactDOM, News, NewsForm) {
-    return React.createClass({
-        render: function () {
-            return (
-                <div>
-                    <div className="panel">
-                        <button className="button--ok" onClick={this.openNewsForm}>Добавить новость</button>
-                    </div>
-                    <div>
-                        {
-                            this.props.newsList.map(function (news) {
-                                return <News key={news._id} news={news}/>
-                            })
-                        }
-                    </div>
+import News from './news';
+import NewsForm from './news-form';
+
+const NewsList = React.createClass({
+    render() {
+        return (
+            <div>
+                <div className="panel">
+                    <button className="button--ok" onClick={this.openNewsForm}>Добавить новость</button>
                 </div>
-            )
-        },
-        openNewsForm: function () {
-            ReactDOM.render(<NewsForm/>, document.querySelector("#container"));
-        }
-    });
-})(require("react"), require("react-dom"), require("./news.jsx"), require("./news-form.jsx"));
+                <div>
+                    {
+                        this.props.newsList.map(function (news) {
+                            return <News key={news._id} news={news}/>
+                        })
+                    }
+                </div>
+            </div>
+
+        )
+    },
+    openNewsForm() {
+        ReactDom.render(<NewsForm/>, document.querySelector("#container"));
+    }
+});
+
+export default NewsList;
+

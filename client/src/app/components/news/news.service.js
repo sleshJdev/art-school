@@ -1,18 +1,22 @@
-import httpUtils from '../utils/http.utils';
+import HttpService from '../../services/http';
 
-const newsService = {
-    addNews: function (news) {
+class NewsService {
+    static addNews(news) {
         console.log('NewService.addNews(), news: ', news);
-        return httpUtils.post('/api/news', news);
-    },
-    deleteNews: function (id) {
-        console.log('NewService.deleteNews(), id: ', id);
-        return httpUtils.del('/api/news/' + id);
-    },
-    getNews: function () {
-        console.log('NewService.getNews()');
-        return httpUtils.get('/api/news');
+        return HttpService.post('/api/news', news);
     }
-};
 
-module.exports = newsService;
+    static deleteNews(id) {
+        console.log('NewService.deleteNews(), id: ', id);
+        return HttpService.del('/api/news/' + id);
+    }
+
+    static getNews() {
+        console.log('NewService.getNews()');
+        return HttpService.get('/api/news').then((newsList) => {
+            console.log(newsList);
+        });
+    }
+}
+
+export default NewsService;

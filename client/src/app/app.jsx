@@ -1,19 +1,18 @@
-const React = require('react')
-    , ReactDOM = require('react-dom')
-    , Header = require("./components/header.jsx")
-    , Container = require("./components/container.jsx")
-    , Footer = require("./components/footer.jsx");
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import Header from './scene/main/header';
+import Container from './scene/main/container';
+import Footer from './scene/main/footer';
 
 const App = React.createClass({
-    render: function () {
-        return (
-            <div className="app">
-                <Header/>
-                <Container/>
-                <Footer/>
-            </div>
-        );
-    }
+    render: () => (
+        <div className="app">
+            <Header/>
+            <Container/>
+            <Footer/>
+        </div>
+    )
 });
 
-ReactDOM.render(<App/>, document.querySelector("#app"));
+ReactDOM.render(<App/>, document.querySelector('#app'));

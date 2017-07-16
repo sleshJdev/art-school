@@ -1,47 +1,30 @@
-/**
- * News Form
- * @author slesh
- */
+import React from 'react';
 
-module.exports = (function (React, ReactDOM, NewsActions) {
-    return React.createClass({
-        getInitialState: function () {
-            return {
-                title: null,
-                content: null
-            }
-        },
-        render: function () {
-            return (
-                <form className="form" onSubmit={this.addNews}>
-                    <div className="form__group">
-                        <label htmlFor="anchor-news-title">Title</label>
-                        <input type="text" id="anchor-news-title" className="form__control" name="title"
-                               value={this.state.title} onChange={this.handleInputChange}/>
+import newsActions from '../news.actions';
+
+const NewsPage = React.createClass({
+    render() {
+        return (
+            <div className="news--page">
+                <div className="news">
+                    <div className="news__header">
+                        {this.props.news.title}
+                        <div className="news--date">{this.props.news.date}</div>
                     </div>
-                    <div className="form__group">
-                        <label htmlFor="anchor-news-content">Content</label>
-                        <textarea id="anchor-news-content" className="form__control" name="content" value={this.state.content} onChange={this.handleInputChange}/>
+                    <div className="news__content">
+                        <img src="resources/1.jpg"/>
+                        {this.props.news.content}
                     </div>
-                    <div className="form__group">
-                        <button type="submit" className="form__control button--ok" onClick={this.addNews}>Save</button>
-                        <button type="submit" className="form__control button--warning" onClick={this.cancel}>Cancel</button>
-                    </div>
-                </form>
-            )
-        },
-        handleInputChange: function (e) {
-            e.preventDefault();
-            this.state[e.target.name] = e.target.value;
-        },
-        addNews: function (e) {
-            e.preventDefault();
-            var news = JSON.parse(JSON.stringify(this.state));
-            news.date = new Date();
-            NewsActions.addNews(news);
-        },
-        cancel: function () {
-            //this.props.onCancel(this.state);
-        }
-    });
-})(require("react"), require("react-dom"), require("news.actions"));
+                </div>
+                <div className="news--page__controls">
+                    <button className="button--danger" onClick={this.deleteNews}>Удалить</button>
+                </div>
+            </div>
+        )
+    },
+    deleteNews() {
+        newsActions.deleteNews(this.props.news._id);
+    }
+});
+
+export default NewsPage;

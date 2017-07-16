@@ -1,15 +1,18 @@
+import guid from 'guid';
+
 const listeners = Object.create(null);
 
-const dispatcher = {
-    dispatch: function (payload) {
+class Dispatcher {
+    static dispatch(payload) {
         for (let id in listeners) {
             listeners[id](payload);
         }
-    },
-    register: function (listener) {
+    }
+
+    static register(listener) {
         listeners[guid.create().value] = listener;
     }
-};
+}
 
-module.exports = dispatcher;
+export default Dispatcher;
 

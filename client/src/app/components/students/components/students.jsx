@@ -1,7 +1,7 @@
-import react from 'react';
+import React from 'react';
 
-const Students = react.createClass({
-    render: () => {
+const Students = React.createClass({
+    render() {
         return (
             <div>
                 <h1>For Student Page</h1>

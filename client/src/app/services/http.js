@@ -1,10 +1,10 @@
-import Promise from 'es6-promise/Promise';
+import {Promise} from 'es6-promise';
 
-const baseUrl = 'http://localhost:9009';
+const baseUrl = 'http://localhost:3000';
 
-const httpUtil = {
-    post: function (url, data) {
-        return new Promise(function (resolve, reject) {
+class HttpUtil {
+    static post(url, data) {
+        return new Promise.Promise(function (resolve, reject) {
             $.ajax({
                 url: baseUrl + url,
                 data: JSON.stringify(data),
@@ -15,9 +15,10 @@ const httpUtil = {
                 error: reject
             });
         });
-    },
-    get: function (url) {
-        return new Promise(function (resolve, reject) {
+    }
+
+    static get(url) {
+        return new Promise.Promise(function (resolve, reject) {
             $.ajax({
                 url: baseUrl + url,
                 method: 'GET',
@@ -26,9 +27,10 @@ const httpUtil = {
                 error: reject
             });
         });
-    },
-    del: function (url) {
-        return new Promise(function (resolve, reject) {
+    }
+
+    static del(url) {
+        return new Promise.Promise(function (resolve, reject) {
             $.ajax({
                 url: baseUrl + url,
                 method: 'DELETE',
@@ -38,6 +40,6 @@ const httpUtil = {
             });
         });
     }
-};
+}
 
-export default httpUtil;
+export default HttpUtil;

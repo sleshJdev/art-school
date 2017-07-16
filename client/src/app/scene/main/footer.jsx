@@ -1,11 +1,13 @@
-module.exports = (function (React) {
-    return React.createClass({
-        render: function () {
-            return (
-                <div className="app__footer">
+import React from 'react';
 
-                </div>
-            )
-        }
-    });
-})(require("react"));
+const Footer = React.createClass({
+    render() {
+        return (
+            <div className="app__footer">
+
+            </div>
+        );
+    }
+});
+
+export default Footer;

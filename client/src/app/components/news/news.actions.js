@@ -1,25 +1,26 @@
-/**
- * @author slesh
- */
+import dispatcher from '../../dispatcher/dispatcher';
+import newsConstants from './news.constants';
 
-module.exports = (function (Dispatcher, NewsConstants) {
-    return {
-        addNews: function (news) {
-            Dispatcher.dispatch({
-                type: NewsConstants.NEWS_CREATE,
-                data: news
-            });
-        },
-        deleteNews: function (id) {
-            Dispatcher.dispatch({
-                type: NewsConstants.NEWS_DELETE,
-                data: id
-            });
-        },
-        getNews: function () {
-            Dispatcher.dispatch({
-                type: NewsConstants.NEWS_GET
-            });
-        }
+class NewsActions {
+    static addNews(news) {
+        dispatcher.dispatch({
+            type: newsConstants.NEWS_CREATE,
+            data: news
+        });
     }
-})(require("dispatcher"), require("news.constants"));
+
+    static deleteNews(id) {
+        dispatcher.dispatch({
+            type: newsConstants.NEWS_DELETE,
+            data: id
+        });
+    }
+
+    static getNews() {
+        dispatcher.dispatch({
+            type: newsConstants.NEWS_GET
+        });
+    }
+}
+
+export default NewsActions;

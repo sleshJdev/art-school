@@ -1,20 +1,23 @@
-/**
- * Body
- *
- * @author slesh
- */
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-module.exports = (function (React, ReactDOM, NewsStore, NewsActions, NewsList) {
-    NewsStore.onChange(function (newsList) {
-        ReactDOM.render(<NewsList newsList={newsList}/>, document.querySelector("#container"));
-    });
-    return React.createClass({
-        componentDidMount: NewsActions.getNews,
-        render: function () {
-            return (
-                <div id="container" className="app__container"></div>
-            )
-        }
-    });
-})(require("react"), require("react-dom"), require("news.store"), require("news.actions"), require("./news-list.jsx"));
+import newsStore from '../../components/news/news.store';
+import newsAction from '../../components/news/news.actions';
+import NewsList from '../../components/news/components/news-list';
+
+newsStore.onChange(function (newsList) {
+    ReactDOM.render(<NewsList newsList={newsList}/>, document.querySelector('#container'));
+});
+
+const Container = React.createClass({
+    componentDidMount: newsAction.getNews,
+    render() {
+        return (
+            <div id='container' className='app__container'/>
+        );
+    }
+});
+
+export default Container;
+
 

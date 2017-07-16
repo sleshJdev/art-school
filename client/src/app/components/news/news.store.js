@@ -1,52 +1,52 @@
-import newsService from '../service/news.service';
-import dispatcher from '../core/'
-import guid from 'guid';
+import newsService from './news.service';
+import newsConstants from './news.constants';
+import dispatcher from '../../dispatcher/dispatcher'
 
-module.exports = (function (NewsService, Guid, Dispatcher, NewsConstants) {
-    var listeners = [];
+const listeners = [];
 
-    function addNews(news) {
-        console.log("NewsStore.addNews(news), news: ", news);
-        NewsService.addNews(news);
-        triggerListeners();
-    }
+function addNews(news) {
+    console.log("NewsStore.addNews(news), news: ", news);
+    newsService.addNews(news);
+    triggerListeners();
+}
 
-    function deleteNews(id) {
-        console.log("NewsStore.deleteNews(id), id: ", id);
-        NewsService.deleteNews(id);
-        triggerListeners();
-    }
+function deleteNews(id) {
+    console.log("NewsStore.deleteNews(id), id: ", id);
+    newsService.deleteNews(id);
+    triggerListeners();
+}
 
-    function getNews() {
-        console.log("NewsStore.getNews()");
-        triggerListeners();
-    }
+function getNews() {
+    console.log("NewsStore.getNews()");
+    triggerListeners();
+}
 
-    function triggerListeners() {
-        NewsService.getNews().then(function (response) {
-            listeners.forEach(function (listener) {
-                listener(response);
-            });
+function triggerListeners() {
+    newsService.getNews().then(function (response) {
+        listeners.forEach(function (listener) {
+            listener(response);
         });
-    }
-
-    Dispatcher.register(function (payload) {
-        switch (payload.type) {
-            case NewsConstants.NEWS_CREATE:
-                addNews(payload.data);
-                break;
-            case NewsConstants.NEWS_DELETE:
-                deleteNews(payload.data);
-                break;
-            case NewsConstants.NEWS_GET:
-                getNews();
-                break;
-        }
     });
+}
 
-    return {
-        onChange: function (listener) {
-            listeners.push(listener);
-        }
+dispatcher.register(function (payload) {
+    switch (payload.type) {
+        case newsConstants.NEWS_CREATE:
+            addNews(payload.data);
+            break;
+        case newsConstants.NEWS_DELETE:
+            deleteNews(payload.data);
+            break;
+        case newsConstants.NEWS_GET:
+            getNews();
+            break;
     }
-})(require("news.service"), require("guid"), require("dispatcher"), require("news.constants"));
+});
+
+const NewsStore = {
+    onChange: function (listener) {
+        listeners.push(listener);
+    }
+};
+
+export default NewsStore;
