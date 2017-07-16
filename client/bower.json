@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "homepage": "https://github.com/sleshJdev/art-school",
+  "authors": [
+    "sleshJdev <slesh.eugene93@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
